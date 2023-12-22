@@ -22,5 +22,5 @@ jobs:
             steps:
               - name: echo a string
                 run: Write-Output "Windows String"
-              - name: java version
-                run: java -version 
+              - name: echo error
+                run: doesnotexist 
