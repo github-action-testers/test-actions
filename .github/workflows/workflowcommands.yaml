@@ -5,5 +5,5 @@ jobs:
   testing-workflow-commands:
     runs-on: ubuntu-latest
     steps:
-      - name: echo message
-        run: echo "::error::missing semicolons"  
+      - name: display error message in runner machine
+        run: message "::error::missing semicolons"  
