@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display error message in runner machine
-        run: message "::error::missing semicolons"  
+        run: echo"::error::missing semicolonss"  
