@@ -6,4 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display error message in runner machine
-        run: message "::error::missing semicolons"  
+        run: message "::error::missing semicolonss"  
+      - name: Display error message with parameter
+        run: echo "::error title=error title,file=app.js,
+             line=2,endLine=8,column=33,endColumn=37::Missing semicolumn"
+      - name: Display debug message with parameter
+        run: echo "::debug title=debug title,file=app.js,
+             line=2,endLine=8,column=33,endColumn=37::Missing semicolumn"
+      - name: Display warning message with parameter
+        run: echo "::warning title=warning title,file=app.js,
+             line=2,endLine=8,column=33,endColumn=37::Missing semicolumn"
