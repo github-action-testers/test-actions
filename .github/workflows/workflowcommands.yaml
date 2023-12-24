@@ -16,3 +16,6 @@ jobs:
       - name: Display warning message with parameter
         run: echo "::warning title=warning title,file=app.js,
              line=2,endLine=8,column=33,endColumn=37::Missing semicolumn"
+      - name: Display notice message with parameter
+        run: echo "::notice title=notice title,file=app.js,
+             line=2,endLine=8,column=33,endColumn=37::Missing semicolumn"
