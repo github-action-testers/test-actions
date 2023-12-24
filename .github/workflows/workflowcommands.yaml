@@ -21,7 +21,7 @@ jobs:
              line=2,endLine=3,column=5,endColumn=7::Missing semicolumn"
       - name: Group of logs
         run: |
-             echo"::group::My Group titile"
+             echo"::group::My Group title"
              echo"Inside group"
              echo"::end group::"
       - name: Masking a value
