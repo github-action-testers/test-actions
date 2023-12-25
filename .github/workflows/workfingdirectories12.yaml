@@ -19,7 +19,7 @@ jobs:
         runs-on: windows-latest
         defaults:
             run:
-              shell: bash
+              shell: pwsh   #powershell will support for windows. Job default overwrites the workflow default
         steps:
             - name: Display working directory & list files
               run:  |
