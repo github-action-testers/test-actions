@@ -2,7 +2,7 @@ name: checkout
 on: [push]
 jobs:
     checkout-and-display-files:
-        runs-on: ubuntu
+        runs-on: ubuntu-latest
         steps:
           - name: List files Before
             run: ls -a
