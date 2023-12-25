@@ -36,5 +36,17 @@ jobs:
               run: |
                 import platform
                 print(platform.processor())
+    display-wd-info-dup:
+            runs-on: ubuntu-latest
+            steps:
+            - name: Display working directory & list files
+              run:  |
+                          pwd
+                          ls
+                          ls -a
+                          echo $GITHUB_SHA
+                          echo $GITHUB_REPOSITORY
+                          echo $GITHUB_WORKSPACE
+                    
 
 
