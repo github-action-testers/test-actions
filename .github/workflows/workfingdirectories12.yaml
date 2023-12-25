@@ -1,4 +1,4 @@
-name: working directories default shell workflow level
+name: default shell workflow and job level
 on: [push]
 defaults:
     run:
@@ -23,11 +23,10 @@ jobs:
         steps:
             - name: Display working directory & list files
               run:  |
-                pwd
-                ls
-                ls -a
-                echo $GITHUB_SHA
-                echo $GITHUB_REPOSITORY
-                echo $GITHUB_WORKSPACE
+                Get-location
+                dir                  
+                echo $env:GITHUB_SHA
+                echo $env:GITHUB_REPOSITORY
+                echo $env:GITHUB_WORKSPACE
 
 
