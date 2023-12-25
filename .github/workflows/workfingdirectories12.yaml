@@ -1,4 +1,4 @@
-name: working directories
+name: working directories default shell workflow level
 on: [push]
 defaults:
     run:
