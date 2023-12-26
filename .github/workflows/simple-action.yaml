@@ -1,5 +1,8 @@
 name: simple action
 on: [push]
+defaults:
+    run:
+      shell: bash
        #Reference : https://github.com/actions/hello-world-javascript-action       
 jobs:
     simple-actions:
@@ -13,5 +16,15 @@ jobs:
                who-to-greet: Prabhu
           - name: Log greeting time
             run: echo "${{ steps.greet.outputs.time }}"
+    sayhelloworld:
+        runs-on: windows-latest
+        steps:
+          - name: helloworldwindows
+            id: hello_world
+            uses: gr2m/hello-world-js-action@v1.1.1 
+            with:
+                greeting: Gregor
+          - name: Log hello time
+            run: echo "${{ steps.hello_world.outputs.greeting }}"
             
 
