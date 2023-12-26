@@ -1,0 +1,17 @@
+name: simple action
+on: [push]
+       #Reference : https://github.com/actions/hello-world-javascript-action       
+jobs:
+    simple-actions:
+        runs-on: ubuntu-latest
+        steps:
+          - name: sample JS action
+            id: greet            
+            uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b  #Here, referring the specific commit id. less chances for workflow fails
+            #  uses: actions/hello-world-javascript-action@main  -It refers the main branch of the third party hello-world-javascript-action. If any breaking change in the main branch our workflow will fail.
+            with: # action receives inputs
+               who-to-greet: Prabhu
+          - name: Log greeting time
+            run: echo "${{ steps.greet.outputs.time }}"
+            
+
