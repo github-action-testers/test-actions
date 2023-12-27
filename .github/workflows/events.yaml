@@ -1,10 +1,10 @@
 name: Repository Events
-on: [push, pull_request, issues]
+on: [push]
 jobs:
     checkout-test:
         runs-on: ubuntu-latest
         steps:
-            - name: commit id
+            - name: commit ids
               run: echo "$GITHUB_SHA"
             - name: branch name
               run: echo "$GITHUB_REF"
