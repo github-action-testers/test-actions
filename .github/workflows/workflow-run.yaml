@@ -9,6 +9,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Execute the RunWorkflow_run
-              run: echo "as per previous one"
-              
+              run: |
+               pwd
+               ls -a
+
             
