@@ -2,8 +2,26 @@ name: Repository Events
 # on: [push, pull_request, issues]
 on:
     push:
-    pull_request:
+      branches: # Filtering the branches. So, workflow will run for this filtered branches when pushing
+        - main
+        - "feature/*" #matches all feature branches feature/festy and not feature/festy/fes
+        - "feature/**" #matches all feature branches feature/festy and feature/festy/fes
+        - "!feature/test" # this branch will exclude by command !
+   #  branches-ignore:
+    #    - feature/feast
+      tags: # Filtering the tags. So, workflow will run for this filtered tags
+        - v1
+        - v1.* # match v1.1,v1.1.2
+      paths:
+        - "**.js" # matches all JS files in the repository
+        - "!app.js" # Exclude this file
+
+    pull_request: #tags are not applicable
         types: [opened, assigned, reopened, synchronize]
+        branches:
+        - main    
+        paths:
+        - "**.js" #Workflow will only run when creating pull request with changes on JS file and targetting main branch
     issues:
         types: [opened]    
 jobs:

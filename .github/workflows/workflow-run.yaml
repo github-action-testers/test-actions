@@ -3,7 +3,9 @@ on:
     workflow_run:
         workflows: [Repository Events] 
         types:
-            - completed
+            - completed # workflow will only run when Repository Events workflow completed
+        branches: #Filter
+            - main #workflow will only run when Repository events workflow completed in main branch
 jobs:
     run-the-workflow-based:
         runs-on: ubuntu-latest
