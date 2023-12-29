@@ -8,7 +8,7 @@ on:
                 default: 'Default value'
                 type: string                
             number:
-                description: 'string input'                
+                description: 'number input'                
                 default: 4
                 type: number
             option:
