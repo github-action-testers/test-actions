@@ -37,7 +37,7 @@ jobs:
               run: echo "$GITHUB_REF"
             - name: check-input-values
               run: |                 
-                 echo "${{ inputs.string.default }}"
+                 echo "String: ${{ inputs.string }}"
                  echo "${{ inputs.number.default }}"
                  echo "${{ inputs.option.default }}"
                  echo "${{ inputs.tags.description }}"
