@@ -38,8 +38,8 @@ jobs:
             - name: check-input-values
               run: |                 
                  echo "String: ${{ inputs.string }}"
-                 echo "${{ inputs.number.default }}"
-                 echo "${{ inputs.option.default }}"
-                 echo "${{ inputs.tags.description }}"
-                 echo "${{ inputs.environment.description }}"
+                 echo "${{ inputs.number }}"
+                 echo "${{ inputs.option }}"
+                 echo "${{ inputs.tags }}"
+                 echo "${{ inputs.environment }}"
 
