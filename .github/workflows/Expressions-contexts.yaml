@@ -12,9 +12,9 @@ jobs:
                echo ${{ 'this is a string'}}
             - name: Dump Contexts
               run: |
-                echo ${{  toJson(github) }}                
-                echo ${{  toJson(job) }}
-                echo ${{  toJson(steps) }}
-                echo ${{  toJson(runner) }}
-                echo ${{  toJson(secrets) }}
+                echo '${{  toJson(github) }}'                
+                echo '${{  toJson(job) }}'
+                echo '${{  toJson(steps) }}'
+                echo '${{  toJson(runner) }}'
+                echo '${{  toJson(secrets) }}'
 
