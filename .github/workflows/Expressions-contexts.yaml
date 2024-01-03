@@ -6,6 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Expression
+              id: expression
               run: |
                echo ${{ 1 }}
                echo ${{ true }}
