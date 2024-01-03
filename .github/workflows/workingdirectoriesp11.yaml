@@ -1,6 +1,7 @@
 name: working directories
 #on: [push]
 on:
+  push:
   schedule:
     - cron: '15 * * * *' # for testing
 
