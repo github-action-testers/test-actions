@@ -10,10 +10,9 @@ jobs:
                echo ${{ 1 }}
                echo ${{ true }}
                echo ${{ 'this is a string'}}
-            - name: Contexts
+            - name: Dump Contexts
               run: |
-                echo ${{  toJson(github) }}
-                echo ${{  toJson(env) }}
+                echo ${{  toJson(github) }}                
                 echo ${{  toJson(job) }}
                 echo ${{  toJson(steps) }}
                 echo ${{  toJson(runner) }}
