@@ -8,7 +8,7 @@ jobs:
         if: github.event_name == 'pull_request'
         steps:
             - name: input Contexts
-              run:  echo '${{  toJson(inputs) }}' 
+              run:  echo '${{  toJson(github) }}'
 
     using-expressions-contexts:
         runs-on: ubuntu-latest   
