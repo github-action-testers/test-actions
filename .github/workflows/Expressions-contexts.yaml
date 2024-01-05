@@ -5,10 +5,11 @@ run-name: "Expressions and contexts by ${{ github.actor }},event: ${{ github.eve
 jobs:
     using-expressions-windows:
         runs-on: windows-latest
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || github.event_name == 'issues'
+        
         steps:
             - name: input Contexts
-              run:  echo '${{  toJson(inputs) }}' 
+              run:  echo '${{  toJson(github) }}' 
 
     using-expressions-contexts:
         runs-on: ubuntu-latest   
