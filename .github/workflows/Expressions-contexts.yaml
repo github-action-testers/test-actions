@@ -5,11 +5,13 @@ run-name: "Expressions and contexts by ${{ github.actor }},event: ${{ github.eve
 jobs:
     using-expressions-windows:
         runs-on: windows-latest
-        if: github.event_name == 'pull_request' || github.event_name == 'issues'
-        
+        if: github.event_name == 'pull_request' || github.event_name == 'issues'              
         steps:
             - name: input Contextss
               run:  echo '${{  toJson(github) }}'
+            - name: Run only for bug
+              if: contains(github.event.issue.labels.*.name, 'bug')  
+              run: echo '${{join(github.event.issue.labels.*.name,',')}}'
 
     using-expressions-contexts:
         runs-on: ubuntu-latest   
