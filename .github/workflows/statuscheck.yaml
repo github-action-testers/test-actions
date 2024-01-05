@@ -10,9 +10,10 @@ jobs:
           - name: step 1
             run: sleep 20
           - name: Fail the job
+            id: Fail-1
             run: exit 1
           - name: step 2 failure
-            if: failure()
+            if: failure() && steps.Fail-1.conclusion == 'failure' #In default, all steps are success
             run: echo 'Runs on Failure'
           - name: step 3 success
             if: success()
