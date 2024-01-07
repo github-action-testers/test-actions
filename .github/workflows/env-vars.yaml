@@ -1,12 +1,15 @@
 name: Environment variable
 on:
     push:
+defaults:
+    run:
+      shell: bash
 env:
     WF_LEVEL_ENV: Available to all jobs 
 
 jobs:
     env-vars-context:
-        runs-on: ubuntu-latest
+        runs-on: windows-latest
         #if: GITHUB_REF == 'refs/heads/main'  #DONT run this
         if: github.ref == 'refs/heads/main'
         env:
