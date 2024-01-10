@@ -12,18 +12,18 @@ jobs:
         runs-on: windows-latest
         #if: GITHUB_REF == 'refs/heads/main'  #DONT run this
         if: github.ref == 'refs/heads/main'
-        env:
-            JOB_LEV_ENV: Available for this current job
+        env: 
+            JOB_LEV_ENV: Available for this current job   #custom env variable
         
         steps:
             - name: setting env variable
               run: | 
-                echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"  # Setting an environment variable
+                echo "NEW_ENV_VAR=$(date)" >> "$GITHUB_ENV"  # Setting an environment run time variable
                 echo "JOB_LEV_ENV=$RANDOM" >> "$GITHUB_ENV"
             - name: Step level env variable
               env:
-                STEP_LEV_ENV: Available only for this step
-                WF_LEVEL_ENV: overriden by this step
+                STEP_LEV_ENV: Available only for this step  #custom env variable
+                WF_LEVEL_ENV: overriden by this step  #custom env variable
               run: |
                echo '${{ env.STEP_LEV_ENV }}'
                echo $STEP_LEV_ENV
