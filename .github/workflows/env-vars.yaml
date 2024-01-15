@@ -22,7 +22,7 @@ jobs:
                 echo "JOB_LEV_ENV=$RANDOM" >> "$GITHUB_ENV"
             - name: Step level env variable
               env:
-                STEP_LEV_ENV: Available only for this step  #custom env variable
+                STEP_LEV_ENV: Acvailable only for this step  #custom env variable
                 WF_LEVEL_ENV: overriden by this step  #custom env variable
               run: |
                echo '${{ env.STEP_LEV_ENV }}'

@@ -24,3 +24,5 @@ jobs:
                 run: Write-Output "Windows String"
               - name: echo javas
                 run: java -version 
+              - name: maven version
+                run: mvn --version 
