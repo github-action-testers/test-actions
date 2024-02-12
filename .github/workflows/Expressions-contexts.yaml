@@ -32,4 +32,6 @@ jobs:
                 echo '${{  toJson(secrets) }}'
             - name: runner details
               run: echo '${{  toJson(runner) }}'
+            - name: input Contextss
+              run:  echo '${{  toJson(github) }}'
 
