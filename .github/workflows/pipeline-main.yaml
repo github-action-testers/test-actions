@@ -13,6 +13,9 @@ on:
     push:
         branches:
             - main
+    # manually trigger
+    # when merge request to source branch main
+    # It will not trigger when creating feature branch from main branch
 
 jobs:
   run-shell-commands:
