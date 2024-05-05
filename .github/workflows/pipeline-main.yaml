@@ -15,7 +15,7 @@ on:
             - main  
             # When merging the feature branch to main branch
             # When pushing the code to main branch
-            # Manual trigger 
+            # Manual triggers 
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
