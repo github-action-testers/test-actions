@@ -1,0 +1,28 @@
+name: PipelineWorkflow
+on: 
+    workflow_dispatch:
+        inputs:            
+            environment:
+                description: 'Environment to run tests against'
+                type: environment
+                required: true
+    push:
+       branches:
+            - "!main"  
+    pull_request:
+        branches:
+            - "main"
+            
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      - name: Multiline Command
+        run: |
+            - name: commit idss
+              run: echo "$GITHUB_SHA"
+            - name: branch name
+              run: echo "$GITHUB_REF"
+  
