@@ -11,12 +11,11 @@ on:
                 type: environment
                 required: true
     push:
-        branches:
-            - main
-    # manually trigger
-    # when merge request to source branch main
-    # It will not trigger when creating feature branch from main branch
-
+       branches:
+            - main  
+            # When merging the feature branch to main branch
+            # When pushing the code to main branch
+            # Manual trigger 
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest

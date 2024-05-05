@@ -1,5 +1,6 @@
 name: First Workflow
 on: [push]
+#Event will trigger when push is made to any branch in the workflow repository
 
 jobs:
   run-shell-commands:
