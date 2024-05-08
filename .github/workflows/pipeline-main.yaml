@@ -1,4 +1,4 @@
-name: PipelineWorkflow
+name: Pipeline_main
 on: 
     workflow_dispatch:
         inputs:            

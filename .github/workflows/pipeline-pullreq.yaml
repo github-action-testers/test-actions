@@ -1,4 +1,4 @@
-name: PipelineWorkflow
+name: Pipeline_PullRequest
 on: 
     workflow_dispatch:
         inputs:            
