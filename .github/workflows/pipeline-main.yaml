@@ -11,11 +11,15 @@ on:
                 type: environment
                 default: ute
     push:
-       branches:
+      branches:
             - 'main'  
             # When merging the feature branch to main branch
             # When pushing the code to main branch
-            # Manual triggers 
+            # Manual triggers     
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }} 
+  cancel-in-progress: true
+
 jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
@@ -28,3 +32,5 @@ jobs:
           run: echo '${{ github.workflow}}' 
         - name: github ref namess
           run: echo '${{ github.ref}}'
+        - name: github group name
+          run: echo '${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}'
