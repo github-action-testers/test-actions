@@ -1,4 +1,4 @@
-name: PipelineWorkflow
+name: Pipeline_PullRequest
 on: 
     workflow_dispatch:
         inputs:            
@@ -7,9 +7,10 @@ on:
                 type: environment
                 default: dev
     push:
-       branches:            
-            - "!main"  
-    pull_request:
+       branches:  # Trigger when push event triggered to any branch except main
+            - '**'        
+            - '!main'  
+    pull_request: # Trigger when pull request from main branch
         branches:
             - "main"
             
@@ -19,5 +20,3 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello World"
-      
-  

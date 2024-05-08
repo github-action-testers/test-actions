@@ -1,4 +1,4 @@
-name: PipelineWorkflow
+name: Pipeline_main
 on: 
     workflow_dispatch:
         inputs:            
@@ -12,7 +12,7 @@ on:
                 default: ute
     push:
        branches:
-            - main  
+            - 'main'  
             # When merging the feature branch to main branch
             # When pushing the code to main branch
             # Manual triggers 
@@ -28,4 +28,3 @@ jobs:
           run: echo '${{ github.workflow}}' 
         - name: github ref namess
           run: echo '${{ github.ref}}'
-  
