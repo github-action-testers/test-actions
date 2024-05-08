@@ -7,10 +7,10 @@ on:
                 type: environment
                 default: dev
     push:
-       branches:
+       branches:  # Trigger when push event triggered to any branch except main
             - '**'        
             - '!main'  
-    pull_request:
+    pull_request: # Trigger when pull request from main branch
         branches:
             - "main"
             
