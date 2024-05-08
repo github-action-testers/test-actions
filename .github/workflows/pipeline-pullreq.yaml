@@ -5,9 +5,10 @@ on:
             environment:
                 description: 'Environment to run tests against'
                 type: environment
-                required: true
+                default: dev
     push:
        branches:
+            - '**'
             - "!main"  
     pull_request:
         branches:
@@ -19,10 +20,5 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello World"
-      - name: Multiline Command
-        run: |
-            - name: commit idss
-              run: echo "$GITHUB_SHA"
-            - name: branch name
-              run: echo "$GITHUB_REF"
+      
   
