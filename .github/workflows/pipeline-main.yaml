@@ -9,7 +9,7 @@ on:
             environment:
                 description: 'Environment to run tests against'
                 type: environment
-                required: true
+                default: ute
     push:
        branches:
             - main  
@@ -20,10 +20,12 @@ jobs:
   run-shell-commands:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
-        run: echo "Hello World"
-      - name: Multiline Command
-        run: |
-          node -v
-          npm -v
+        - name: echo Github_sha value
+          run: echo "$GITHUB_SHA"
+        - name: echo GITHUB_REF value
+          run: echo "$GITHUB_REF" 
+        - name: github workflow name
+          run: echo '${{ github.workflow}}' 
+        - name: github ref namess
+          run: echo '${{ github.ref}}'
   
