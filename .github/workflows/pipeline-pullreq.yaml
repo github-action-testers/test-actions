@@ -8,7 +8,7 @@ on:
                 default: dev
     push:
        branches:            
-            - "!main"  
+            - '!main'  
     pull_request:
         branches:
             - "main"
