@@ -1,0 +1,23 @@
+name: PipelineWorkflow
+on: 
+    workflow_dispatch:
+        inputs:            
+            environment:
+                description: 'Environment to run tests against'
+                type: environment
+                default: dev
+    push:
+       branches:            
+            - "!main"  
+    pull_request:
+        branches:
+            - "main"
+            
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello World"
+      
+  
