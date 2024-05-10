@@ -30,7 +30,7 @@ runs:
       env: ${{ inputs.environment }}
     
    - name: Generate image unique tag
-     id: generate-tag
+     id: create-tag
      run: |
         echo "$GITHUB_RUN_NUMBER"
         echo "$GITHUB_SHA"
@@ -41,6 +41,10 @@ runs:
    - name : Generate Image for the backend
      run: |
         echo "Name of appln: ${{ inputs.application-name }}"
+        echo "Generated image tag: {{ steps.create-tag.outputs.short_sha}}"
+        echo "gcp-client-id: ${{ inputs.gcp-client-id }}"
+        echo "gcp-subs-id: ${{ inputs.gcp-subs-id }}"
+        echo "env: ${{ inputs.environment }}"
      shell: bash
       
 
