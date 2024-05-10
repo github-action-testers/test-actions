@@ -23,9 +23,18 @@ runs:
   using: "composite"
   steps:
    - name: Build and test
-     uses: ./.github/actions/base-test-build
+     uses: ./.github/actions/base-build
      with:
       gcp-client-id: ${{ inputs.gcp-client-id }}
-      gcp-subs-id: ${{ inputs.gcp-subs-id}}
+      gcp-subs-id: ${{ inputs.gcp-subs-id }}
       env: ${{ inputs.environment }}
+    
+   - name: Generate image tag
+     id: generate-tag
+     run: |
+      echo "$GITHUB_RUN_NUMBER"
+      echo "$GITHUB_SHA"
+      short_sha=`echo $GITHUB_SHA | cut -c1-6`
+      echo "$short_sha" 
+
 

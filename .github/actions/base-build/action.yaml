@@ -1,4 +1,4 @@
-name: Workflow for preprod deploy
+name: Workflow for preparing maven package
 description: This workflow runs for every deployment on non prod
 
 inputs:  
@@ -30,7 +30,7 @@ runs:
     - name: Login to GCP
       run: |
         echo '${{ inputs.gcp-client-id }}'                
-        echo '${{ inputs.gcp-subs-id}}'
+        echo '${{ inputs.gcp-subs-id }}'
       shell: bash
       
         
