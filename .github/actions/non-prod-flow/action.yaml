@@ -34,8 +34,9 @@ runs:
      run: |
         echo "$GITHUB_RUN_NUMBER"
         echo "$GITHUB_SHA"
-        short_sha=`echo $GITHUB_SHA | cut -c1-6` >> $GITHUB_OUTPUT
-        echo "$short_sha"         
+        short_sha=`echo $GITHUB_SHA | cut -c1-6`         
+        echo "$short_sha"   
+        echo "short_sha=$GITHUB_RUN_NUMBER-$short_sha" >> $GITHUB_OUTPUT     
      shell: bash
 
    - name : Generate Image for the backend
