@@ -23,7 +23,7 @@ runs:
   using: "composite"
   steps:
    - name: Build and test
-     uses: ./base-test-build
+     uses: ./.github/actions/base-test-build
      with:
       gcp-client-id: ${{ inputs.gcp-client-id }}
       gcp-subs-id: ${{ inputs.gcp-subs-id}}
