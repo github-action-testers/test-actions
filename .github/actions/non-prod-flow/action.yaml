@@ -29,13 +29,18 @@ runs:
       gcp-subs-id: ${{ inputs.gcp-subs-id }}
       env: ${{ inputs.environment }}
     
-   - name: Generate image tag
+   - name: Generate image unique tag
      id: generate-tag
      run: |
         echo "$GITHUB_RUN_NUMBER"
         echo "$GITHUB_SHA"
-        short_sha=`echo $GITHUB_SHA | cut -c1-6`
-        echo "$short_sha" 
+        short_sha=`echo $GITHUB_SHA | cut -c1-6` >>$GITHUB_OUTPUT
+        echo "$short_sha"         
      shell: bash
+
+   - name : Generate Image for the backend
+     run: |
+        echo "Name of appln: ${{ inputs.application-name }}"
+      
 
 
