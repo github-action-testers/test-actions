@@ -34,7 +34,7 @@ runs:
      run: |
         echo "$GITHUB_RUN_NUMBER"
         echo "$GITHUB_SHA"
-        short_sha=`echo $GITHUB_SHA | cut -c1-6` >>$GITHUB_OUTPUT
+        short_sha=`echo $GITHUB_SHA | cut -c1-6` >> $GITHUB_OUTPUT
         echo "$short_sha"         
      shell: bash
 
