@@ -36,5 +36,6 @@ runs:
       echo "$GITHUB_SHA"
       short_sha=`echo $GITHUB_SHA | cut -c1-6`
       echo "$short_sha" 
+    shell: bash
 
 
