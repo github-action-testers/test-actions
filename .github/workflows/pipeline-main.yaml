@@ -46,4 +46,4 @@ jobs:
             application-name: food-services
             environment: 'ae'
             gcp-client-id: ${{ vars.GCP_CLIENT_ID }}
-            GCP_SUB_ID: ${{ vars.GCP_SUB_ID }}
+            gcp-subs-id: ${{ vars.GCP_SUB_ID }}
