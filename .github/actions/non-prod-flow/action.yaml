@@ -41,6 +41,7 @@ runs:
    - name : Generate Image for the backend
      run: |
         echo "Name of appln: ${{ inputs.application-name }}"
+     shell: bash
       
 
 
