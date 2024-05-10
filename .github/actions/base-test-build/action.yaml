@@ -1,0 +1,24 @@
+name: Workflow for preprod deploy
+description: This workflow runs for every deployment on non prod
+
+inputs:  
+  environment:
+    description: "target env to deploy to"
+    required: true
+    default: ae
+  gcp-client-id:
+    description: "gcp test client id"
+    required: true
+  gcp-subs-id:
+    description: "gcp test subs id"
+    required: true
+
+runs:
+  using: "composite"
+  steps:    
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+
+  

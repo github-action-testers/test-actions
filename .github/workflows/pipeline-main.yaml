@@ -9,7 +9,7 @@ on:
             environment:
                 description: 'Environment to run tests against'
                 type: environment
-                default: ute
+                default: ae
     push:
       branches:
             - 'main'  
@@ -21,8 +21,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  run-shell-commands:
+  main:
+    name: Build-push-deploy
     runs-on: ubuntu-latest
+    environment: ae
     steps:
         - name: echo Github_sha value
           run: echo "$GITHUB_SHA"
@@ -34,3 +36,14 @@ jobs:
           run: echo '${{ github.ref}}'
         - name: github group name
           run: echo '${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}'
+
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Run workflow
+          uses: ./.github/actions/non-prod-full-workflow
+          with:
+            application-name: food-services
+            environment: 'ae'
+            gcp-client-id: ${{ vars.GCP_CLIENT_ID }}
+            GCP_SUB_ID: ${{ vars.GCP_SUB_ID }}

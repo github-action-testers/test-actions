@@ -1,0 +1,31 @@
+name: Workflow for ae environment
+description: This workflow runs for every deployment on non prod
+
+inputs:
+  application-name:
+    description: "Name of the application"
+    required: true
+  environment:
+    description: "target env to deploy to"
+    required: true
+  gcp-client-id:
+    description: "gcp test client id"
+    required: true
+  gcp-subs-id:
+    description: "gcp test subs id"
+    required: true
+  helm-path:
+    description: "Path for the gcp helm file"
+    required: false
+    defult: ./deploy/helm
+
+runs:
+  using: "composite"
+  steps:
+   - name: Build and test
+     uses: ./base-test-build
+     with:
+      gcp-client-id: ${{ inputs.gcp-client-id }}
+      gcp-subs-id: ${{ inputs.gcp-subs-id}}
+      env: ${{ inputs.environment }}
+
