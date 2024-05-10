@@ -21,4 +21,16 @@ runs:
         distribution: 'temurin'
         java-version: '21'
 
+    #- name: Login to GCP
+    #  uses:
+    #  with:
+    #    client-id: ${{ inputs.gcp-client-id }}
+    #    subscription-id: ${{ inputs.gcp-subs-id}}
+
+    - name: Login to GCP
+      run: |
+        echo '${{ inputs.gcp-client-id }}'                
+        echo '${{ inputs.gcp-subs-id}}'
+      
+        
   
