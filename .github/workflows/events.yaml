@@ -28,7 +28,7 @@ jobs:
     checkout-test:
         runs-on: ubuntu-latest
         steps:
-            - name: commit ids
+            - name: commit id
               run: echo "$GITHUB_SHA"
             - name: branch name
               run: echo "$GITHUB_REF"
