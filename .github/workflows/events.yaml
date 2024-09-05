@@ -30,6 +30,6 @@ jobs:
         steps:
             - name: commit id
               run: echo "$GITHUB_SHA"
-            - name: branch name
+            - name: branch names
               run: echo "$GITHUB_REF"
             
