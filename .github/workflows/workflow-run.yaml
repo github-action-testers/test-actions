@@ -10,7 +10,7 @@ jobs:
     run-the-workflow-based:
         runs-on: ubuntu-latest
         steps:
-            - name: Execute the RunWorkflow_run
+            - name: Execute the RunWorkflow_runs
               run: |
                pwd
                ls -a
