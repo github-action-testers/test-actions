@@ -3,7 +3,7 @@ name: working directories
 on:
   push:
   schedule:
-    - cron: '15 * * * *' # for testing
+    - cron: '15 * * * *' # for testings
 
 jobs:
     display-wd-info:
