@@ -7,7 +7,7 @@ jobs:
     display-wd-info:
         runs-on: ubuntu-latest
         steps:
-            - name: Display working directory & list files
+            - name: Display working directory & list files it
               run:  |
                 pwd
                 ls
